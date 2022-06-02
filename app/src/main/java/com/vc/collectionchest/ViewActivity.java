@@ -33,6 +33,7 @@ public class ViewActivity extends AppCompatActivity {
     String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
     DatabaseReference ref,DataRef;
     StorageReference StorageRef;
+    String itemName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class ViewActivity extends AppCompatActivity {
                 if (dataSnapshot.exists())
                 {
                     //Values to display item information
-                    String itemName=dataSnapshot.child("ItemName").getValue().toString();
+                     itemName=dataSnapshot.child("ItemName").getValue().toString();
                     String  itemdescription = dataSnapshot.child("ItemDescription").getValue().toString();
                     String itemdate =dataSnapshot.child("itemDate").getValue().toString();
 
@@ -87,8 +88,8 @@ public class ViewActivity extends AppCompatActivity {
                         //Author: Viral Patel
                         //Link:https://stackoverflow.com/a/36106306
                         AlertDialog.Builder alert = new AlertDialog.Builder(ViewActivity.this);
-                        alert.setTitle("Delete entry");
-                        alert.setMessage("Are you sure you want to delete?");
+                        alert.setTitle("Delete item");
+                        alert.setMessage("Are you sure you want to delete " + itemName + "?");
                         alert.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
