@@ -45,9 +45,10 @@ public class ViewActivity extends AppCompatActivity {
         btnDelete=findViewById(R.id.btnDelete);
         date = findViewById(R.id.textView_date);
         String CollectionKey=getIntent().getStringExtra("CollectionKey");
-        ref= FirebaseDatabase.getInstance().getReference().child("users").child(user_id).child("CollectionName").child(HelperClass.key);
+        ref= FirebaseDatabase.getInstance().getReference().child("users").child(user_id).child("CollectionName").child(HelperClass.key).child("ItemName");
         DataRef=FirebaseDatabase.getInstance().getReference().child("users").child(user_id).child("CollectionName").child(HelperClass.key).child("ItemName").child(CollectionKey);
         StorageRef= FirebaseStorage.getInstance().getReference().child(user_id).child("CollectionImage").child("ItemName").child(CollectionKey+".jpg");
+
         //Datasnapshot code adapted from:
         //Author: Frank van Puffelen
         //Link: https://stackoverflow.com/a/62097918
@@ -57,6 +58,7 @@ public class ViewActivity extends AppCompatActivity {
 
                 if (dataSnapshot.exists())
                 {
+
                     //Values to display item information
                      itemName=dataSnapshot.child("ItemName").getValue().toString();
                     String  itemdescription = dataSnapshot.child("ItemDescription").getValue().toString();
@@ -74,12 +76,14 @@ public class ViewActivity extends AppCompatActivity {
                 }
 
             }
+///////////////
 
-            @Override
+           @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
+
                 //Button to delete item from collection
                btnDelete.setOnClickListener(new View.OnClickListener() {
                     @Override

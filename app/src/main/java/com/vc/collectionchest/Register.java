@@ -93,7 +93,8 @@ public class Register extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Register.this, "User with this email already exists", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(Register.this, "User with this email already exists", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

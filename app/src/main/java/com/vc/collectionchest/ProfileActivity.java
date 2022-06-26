@@ -61,21 +61,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-      //Button to logout
-        btnLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseUser user = mAuth.getCurrentUser();
-                if (user != null) {
 
-                    String userEmail = user.getEmail();
-                    Toast.makeText(ProfileActivity.this, "Goodbye "+userEmail, Toast.LENGTH_SHORT).show();
-                }
-                mAuth.getInstance().signOut();
-                Intent myIntent = new Intent(ProfileActivity.this, MainActivity.class);
-                startActivity(myIntent);
-            }
-        });
         //Button to update username
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

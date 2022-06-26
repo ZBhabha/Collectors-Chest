@@ -1,6 +1,14 @@
 package com.vc.collectionchest;
 
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class CollectionActivity {
     //Variables declared
@@ -8,6 +16,9 @@ public class CollectionActivity {
     String CollectionName;
     String  CollectionGoal;
     String ImageUrl;
+
+
+
 
 
 
@@ -20,6 +31,7 @@ public class CollectionActivity {
     //Empty constructor
     public CollectionActivity() {
     }
+
 
 
     //Getters and setters
@@ -56,4 +68,5 @@ public class CollectionActivity {
     public void setImageUrl(String imageUrl) {
         ImageUrl = imageUrl;
     }
+
 }

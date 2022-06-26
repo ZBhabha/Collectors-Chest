@@ -10,8 +10,8 @@
         android:id="@+id/ivAdd"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_image" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_blue" />
 
     <EditText
         android:id="@+id/txtItem"

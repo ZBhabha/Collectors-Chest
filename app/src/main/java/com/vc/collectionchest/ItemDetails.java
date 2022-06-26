@@ -3,9 +3,14 @@ package com.vc.collectionchest;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,17 +33,18 @@ import java.util.HashMap;
 
 public class ItemDetails extends AppCompatActivity {
      //Variables declared
+     private static final int REQUEST_TAKE_PHOTO = 123;
     private static final int REQUEST_CODE_IMAGE =101 ;
-    private ImageView ivAdd;
+    private ImageView ivAdd,ivPhoto,ivPic;
     private EditText txtItem,txtDate,txtCategory,txtDescription;
-
+    Bitmap imageBitmap;
     private TextView textViewProgress;
     private ProgressBar progressBar;
     private Button btnUpload;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
+    Boolean isPhotoAdded = false;
      String itemName;
      String itemCategory;
      String itemDate;
@@ -61,6 +67,7 @@ public class ItemDetails extends AppCompatActivity {
         setContentView(R.layout.activity_item_details);
 
         ivAdd=findViewById(R.id.ivAdd);
+        ivPhoto = findViewById(R.id.ivPhoto);
         txtItem=findViewById(R.id.txtItem);
         txtDate = findViewById(R.id.txtDate);
         txtCategory = findViewById(R.id.txtCategory);
@@ -72,6 +79,7 @@ public class ItemDetails extends AppCompatActivity {
         txtDescription= findViewById(R.id.txtDescription);
         textViewProgress.setVisibility(View.GONE);
         progressBar.setVisibility(View.GONE);
+        ivPic=findViewById(R.id.ivPic);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         Dataref= FirebaseDatabase.getInstance().getReference().child("users").child(user_id).child("CollectionName").child(HelperClass.key).child("ItemName");
@@ -92,6 +100,25 @@ public class ItemDetails extends AppCompatActivity {
                 startActivityForResult(intent,REQUEST_CODE_IMAGE);
             }
         });
+        ivPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Code for getting camera image adapted from:
+                //Author : Joel
+                //Link: https://stackoverflow.com/a/64926700
+                String fileName = "new-photo-name.jpg";
+                // Create parameters for Intent with filename
+                ContentValues values = new ContentValues();
+                values.put(MediaStore.Images.Media.TITLE, fileName);
+                values.put(MediaStore.Images.Media.DESCRIPTION, "Image capture by camera");
+                imageUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        values);
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                startActivityForResult(intent, 123);
+            }
+        });
         //Item object created
         ItemActivity i = new ItemActivity(itemName,itemDescription,itemDate,itemCategory);
         //Button to upload collection to Firebase
@@ -107,12 +134,16 @@ public class ItemDetails extends AppCompatActivity {
                if (itemDate.isEmpty()||itemDescription.isEmpty()||itemName.isEmpty()){
                    btnUpload.setEnabled(true);
                    Toast.makeText(ItemDetails.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-               }else if (isImageAdded!=false && itemName!=null)
+               }else if (isImageAdded==false)
                 {
-                    uploadImage(i);
+                    btnUpload.setEnabled(true);
+                    Toast.makeText(ItemDetails.this, "Please add an image", Toast.LENGTH_SHORT).show();
+
+
 
                 }else{
-                    Toast.makeText(ItemDetails.this, "Please add an image", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ItemDetails.this, "Please add an image", Toast.LENGTH_SHORT).show();
+                   uploadImage(i);
 
                 }
             }
@@ -134,20 +165,25 @@ public class ItemDetails extends AppCompatActivity {
                 StorageRef.child(key +".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        HashMap<String,String> hashMap=new HashMap();
+                        HashMap<String, String> hashMap = new HashMap();
 
-                        hashMap.put("ItemName",itemName);
-                        hashMap.put("ItemDescription",itemDescription);
-                        hashMap.put("itemDate",itemDate);
-                        hashMap.put("ItemCategory",itemCategory);
-                        hashMap.put("ImageUrl",uri.toString());
+                        hashMap.put("ItemName", itemName);
+                        hashMap.put("ItemDescription", itemDescription);
+                        hashMap.put("itemDate", itemDate);
+                        hashMap.put("ItemCategory", itemCategory);
+                        hashMap.put("ImageUrl", uri.toString());
 
                         Dataref.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
 
                             @Override
                             public void onSuccess(Void aVoid) {
-                                startActivity(new Intent(getApplicationContext(), HomeActivity2.class));
+                               HelperClass.check = true;
+                                Intent i = new Intent(ItemDetails.this,HomeActivity2.class);
+
+                                startActivity(i);
+                               // startActivity(new Intent(getApplicationContext(), HomeActivity2.class));
                                 Toast.makeText(ItemDetails.this, "Item Successfully Uploaded!", Toast.LENGTH_SHORT).show();
+
                                 //btnUpload.setClickable(true);
                             }
                         });
@@ -177,7 +213,19 @@ public class ItemDetails extends AppCompatActivity {
         {
             imageUri=data.getData();
             isImageAdded=true;
-            ivAdd.setImageURI(imageUri);
+            ivPic.setImageURI(imageUri);
+        }else if (requestCode==REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK){
+            isImageAdded=true;
+            ContentResolver cr = getContentResolver();
+            try {
+                // Creating a Bitmap with the image Captured
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, imageUri);
+                // Setting the bitmap as the image
+                ivPic.setImageBitmap(bitmap);
+            } catch (Exception e) {
+                e.getMessage().toString();
+            }
+            ivPic.setImageURI(imageUri);
         }
     }
 }

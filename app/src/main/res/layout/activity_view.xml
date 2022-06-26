@@ -49,7 +49,7 @@
             android:id="@+id/imageView_arrow"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="330dp"
+            android:layout_marginStart="330dp"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="0dp"
             app:srcCompat="@drawable/ic_blackarrow" />

@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <EditText
         android:id="@+id/inputSearch"
@@ -21,9 +25,41 @@
         android:paddingLeft="20dp"
         android:paddingTop="8dp"
         android:paddingRight="10dp"
+
         android:paddingBottom="8dp" />
+    <TextView
+        android:id="@+id/textViewProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputSearch"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:gravity="center"
+        android:text="0%"
+         />
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewProgress"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="% Graph"
+        android:id="@+id/btnGraph"
+        android:layout_below="@+id/progressBar"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        />
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/inputSearch"
+        android:layout_below="@+id/btnGraph"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recylerView"

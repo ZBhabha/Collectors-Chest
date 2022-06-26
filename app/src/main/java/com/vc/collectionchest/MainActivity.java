@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     //Variables declared
@@ -36,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     String email,password;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
-
+    DatabaseReference Dataref;
+    String user_id;
      //Login UI  adpated from :
      //Technical Skillz
     //Link:https://youtu.be/BLfqZlUI_MM
@@ -48,9 +52,21 @@ public class MainActivity extends AppCompatActivity {
         //Open dashboard if user is logged in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null ) {
-        Intent myIntent = new Intent(MainActivity.this, DashBoard.class);
-        startActivity(myIntent);
+            SharedPreferences pref = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
+            HelperClass.on = pref.getBoolean("switch1",false);
+            if(HelperClass.on==true){
+                Intent myIntent = new Intent(MainActivity.this, PasswordActivity.class);
+
+                startActivity(myIntent);
+            }else {
+                Intent myIntent = new Intent(MainActivity.this, DashBoard.class);
+                startActivity(myIntent);
+            }
+        //Intent myIntent = new Intent(MainActivity.this, DashBoard.class);
+        //startActivity(myIntent);
         currentUser.reload();
+        ////////////
+
     }
 }
 
@@ -99,6 +115,13 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                                        Dataref = FirebaseDatabase.getInstance().getReference().child("users").child(user_id).child("Protect");
+
+                                        HelperClass.pass = password;
+                                        if (!Dataref.child("Protect").equals(password)){
+                                            Dataref.child("Protect").setValue(HelperClass.pass);}
                                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                         Intent i = new Intent(MainActivity.this,DashBoard.class);
                                         startActivity(i);

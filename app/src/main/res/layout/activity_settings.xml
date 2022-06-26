@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:background="@color/browser_actions_bg_grey"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#8AC8D8"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textStyle="bold"
+            android:text="Settings"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+             />
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="180dp"
+
+            android:src="@drawable/set" />
+    </RelativeLayout>
+
+        <TextView
+        android:id="@+id/tVPasscode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Turn on password protect"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:layout_below="@id/titleTV"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
+        android:layout_gravity="center"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@id/tVPasscode"
+        android:minWidth="48dp"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switch1"
+
+        android:layout_gravity="center"
+        android:text="SAVE"/>
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSave"
+         android:layout_marginTop="200dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+
+        android:text="VIEW ABOUT"
+         />
+    <Button
+        android:id="@+id/btnLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+
+        android:text="Log Out"
+        />
+
+
+</LinearLayout>

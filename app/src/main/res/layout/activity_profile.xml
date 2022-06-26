@@ -102,12 +102,6 @@
 
 
         </LinearLayout>
-        <Button
-            android:id="@+id/btnLog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:text="Log Out" />
+
     </LinearLayout>
 </ScrollView>

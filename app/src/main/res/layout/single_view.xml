@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginLeft="240dp"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="54dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:fontFamily="@font/roboto"
             android:gravity="right"
@@ -63,7 +63,7 @@
             android:id="@+id/imageView_arrow"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="330dp"
+            android:layout_marginStart="330dp"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="0dp"
             app:srcCompat="@drawable/ic_blackarrow" />

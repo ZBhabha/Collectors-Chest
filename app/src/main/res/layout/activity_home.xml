@@ -22,10 +22,12 @@
         android:paddingTop="8dp"
         android:paddingRight="10dp"
         android:paddingBottom="8dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/inputSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:id="@+id/recylerView"
         />
 
@@ -40,6 +42,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
+
         android:background="@color/colorBlueOne"
         android:backgroundTint="@color/colorBlueOne"
         android:src="@drawable/ic_add"

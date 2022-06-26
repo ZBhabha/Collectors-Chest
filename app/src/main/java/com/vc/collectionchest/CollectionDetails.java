@@ -105,8 +105,13 @@ public class CollectionDetails extends AppCompatActivity {
                 if (collectionGoal.isEmpty()||collectionName.isEmpty()) {
                     btnUpload.setEnabled(true);
                     Toast.makeText(CollectionDetails.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                }else if (isImageAdded!=false && collectionName!=null)
+                }else if (isImageAdded==false)
                 {
+                    btnUpload.setEnabled(true);
+                    Toast.makeText(CollectionDetails.this, "Please add an image", Toast.LENGTH_SHORT).show();
+
+
+                }else{
                     uploadCollection(c);
                 }
             }

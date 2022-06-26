@@ -9,37 +9,48 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/btn_bg.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic__google_logo.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_add.xml" value="0.1745" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_add_white.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_arrow.xml" value="0.1785" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_blackarrow.xml" value="0.1785" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_collections.xml" value="0.1785" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_delete.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_email.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_email_icon.xml" value="0.1785" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_gallery.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_galleryBlue.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_goals.xml" value="0.1785" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_image.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1785" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_person.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_person_icon.xml" value="0.1785" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_pic.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_security.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/ic_settings.xml" value="0.1785" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/input_background.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/input_search.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/single_view.xml" value="0.1745" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/drawable/splash_background.xml" value="0.1745" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_dash_board.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_about.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_dash_board.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_details.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_graph.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_home.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_home2.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_item.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_item_details.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_password.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_s.xml" value="0.13451086956521738" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_settings.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_splash.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/activity_view.xml" value="0.22" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/settings_activity.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/single.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/layout/single_view.xml" value="0.22" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/CollectionChest/app/src/main/res/xml/root_preferences.xml" value="0.22" />
       </map>
     </option>
   </component>
