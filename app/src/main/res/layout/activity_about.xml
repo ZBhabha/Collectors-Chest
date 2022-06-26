@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/tvAboutHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:text="ABOUT COLLECTORS CHEST"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlueTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <TextView
+        android:id="@+id/tvAboutInfo"
+        android:layout_width="371dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/tvAboutHeading"
+        android:layout_alignStart="@+id/tvAboutHeading"
+        android:layout_alignTop="@+id/tvAboutHeading"
+        android:layout_alignRight="@+id/tvAboutHeading"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginRight="-45dp"
+        android:layout_toEndOf="@+id/tvAboutHeading"
+        android:orientation="vertical"
+        android:text=" ~Collectors Chest is an app which manages your collectables and helps you reach your collection goals."
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvAboutConfetti"
+        android:layout_width="380dp"
+        android:layout_height="176dp"
+        android:layout_below="@+id/tvAboutInfo"
+        android:layout_alignStart="@+id/tvAboutInfo"
+        android:layout_alignTop="@+id/tvAboutInfo"
+        android:layout_alignRight="@+id/tvAboutInfo"
+        android:layout_gravity="center"
+        android:layout_marginStart="-17dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="3dp"
+        android:text=" ~Every user will be able to set a goal in their collections, and once they reach this goal confetti will be displayed inside that page. By tapping anywhere on the top of the screen, more confetti will appear."
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvAboutPasswordProtect"
+        android:layout_width="375dp"
+        android:layout_height="407dp"
+        android:layout_below="@+id/tvAboutInfo"
+        android:layout_alignStart="@+id/tvAboutConfetti"
+        android:layout_alignTop="@+id/tvAboutConfetti"
+        android:layout_alignRight="@+id/tvAboutConfetti"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginRight="-7dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="3dp"
+        android:text="~Password protect will lock the app and it requires a password in order to access the dashboard each time you open the app. This feature allows you to make sure no one else can open the app on your phone and view your collections on the app. the password that must be used for the password protect feature, must be the password that you login the app with. This feature can be turned off or on at any time."
+        android:textSize="20sp" />
+
+</RelativeLayout>
