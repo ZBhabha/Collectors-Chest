@@ -78,7 +78,9 @@
         android:layout_below="@+id/txtDescription"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:editable="false"
         android:ems="10"
+
         android:hint="Enter date..."
         android:minHeight="48dp" />
 

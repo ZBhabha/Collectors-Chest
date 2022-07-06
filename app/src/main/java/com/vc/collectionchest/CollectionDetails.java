@@ -151,7 +151,7 @@ public class CollectionDetails extends AppCompatActivity {
                                 Intent intent=new Intent(CollectionDetails.this, HomeActivity.class);
 
                                 startActivity(intent);
-                                Toast.makeText(CollectionDetails.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CollectionDetails.this, "Collection Successfully Uploaded!", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

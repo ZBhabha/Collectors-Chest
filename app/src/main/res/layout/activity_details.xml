@@ -29,6 +29,7 @@
         android:layout_below="@+id/txtItem"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:inputType="number"
         android:hint="Enter Collection Goal..."
         android:minHeight="48dp" />
 

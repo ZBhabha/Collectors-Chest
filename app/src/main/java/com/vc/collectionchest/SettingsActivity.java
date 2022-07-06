@@ -111,5 +111,15 @@ public class SettingsActivity extends AppCompatActivity {
         switch1.setChecked(switchOffOn);
 
     }
+//Method to ensure user is taken to dashboard whn back button is pressed
+    //Not to add collection page
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(SettingsActivity.this, DashBoard.class);
+        startActivity(i);
 
+        finish();
+
+    }
 }

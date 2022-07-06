@@ -10,8 +10,8 @@ android {
         applicationId "com.vc.collectionchest"
         minSdk 25
         targetSdk 32
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 4
+        versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,4 +50,5 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     implementation 'nl.dionsegijn:konfetti-xml:2.0.2'
+
 }
